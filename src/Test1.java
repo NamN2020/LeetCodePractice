@@ -1,26 +1,19 @@
 import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
 public class Test1 {
     @Test
     public void testIsPalindrome() {
-        int inputs[][] = {
-                {},
-                {3, 1, 3},
-                {1,1,1},
-                {1,2,3,4},
-                {5,4,3,4,5},
-                {9,9,9,9,9,9,9,9,1}
-        };
+        int inputs[] = {0,313,111,1234,54345,999,988918};
 
-        boolean answers[][] = {
-                {false},
-                {true},
-                {true},
-                {false},
-                {true},
-                {false}
-        };
+        boolean answers[] = {true, true, true, false, true, true, false};
 
+        for(int i = 0; i < inputs.length; i++){
+            boolean actual = Solution.isPalindrome(inputs[i]);
+            boolean expected = answers[i];
+
+            assertEquals(actual, expected);
+        }
 
     }
 }
